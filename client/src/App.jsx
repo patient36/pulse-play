@@ -1,12 +1,12 @@
 import React from "react";
 import NavBar from "./Components/NavBar";
-import HomeHero from "./Components/HomeHero";
+import HotTracks from "./Pages/HotTracks";
 
 const App = () => {
   return (
     <div>
       <NavBar />
-      <HomeHero/>
+      <HotTracks />
     </div>
   );
 };

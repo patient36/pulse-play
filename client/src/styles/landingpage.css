@@ -17,6 +17,7 @@
     display: flex;
     padding: 10px;
     flex-direction: column;
+    background-color: black;
 }
 
 .side-bar section {
