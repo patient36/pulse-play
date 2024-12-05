@@ -18,6 +18,8 @@
     padding: 10px;
     flex-direction: column;
     background-color: black;
+    transition: width .4s ease;
+    z-index: 1;
 }
 
 .side-bar section {
@@ -57,35 +59,33 @@
 }
 
 
-.close{
+.close {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-.side-bar.closed{
+.side-bar.closed {
     position: absolute;
-    top: 5px;
+    background-color: rgba(79, 79, 79, 0.08);
+    border-radius: 10px;
+    top: 0;
     left: 0;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 90%;
     border: 0;
-    transition: width .2s ease;
+    transition: width .4s ease;
 }
 
-.side-bar.closed + .hero{
-    width: 100vw;
-    margin-top: 20px;
-}
-
-.hamburger{
+.hamburger {
     cursor: pointer;
     font-size: 30px;
 }
+
 /* Hero */
 
 .hero {
-    width: 80vw;
+    width: 100vw;
     max-height: 90vh;
     overflow-y: scroll;
     scrollbar-width: none;
@@ -93,8 +93,13 @@
     justify-content: flex-start;
     flex-direction: column;
     color: whitesmoke;
-    padding: 30px 30px 20px 30px;
-    transition: width .2s ease-in-out;
+    padding-left: 55px;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+
+.hero section{
+    margin-bottom: 30px;
 }
 
 .hero h2 {
@@ -172,11 +177,7 @@
 /* Responsive design */
 
 @media screen and (max-width: 480px) {
-    .hero {
-        width: 100vw;
-    }
-
-    .side-bar{
+    .side-bar {
         position: absolute;
         top: 0;
         left: 0;

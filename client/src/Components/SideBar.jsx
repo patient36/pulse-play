@@ -19,7 +19,7 @@ const SideBar = ({ isOpen }) => {
   };
   const navigate = useNavigate();
   return (
-    <div className={`side-bar ${isSideBarOpen ? "" : "closed"}`}>
+    <div className={`side-bar fixed ${isSideBarOpen ? "" : "closed"}`}>
       {isSideBarOpen ? (
         <>
           <p className="close" onClick={toggleSideBar}>

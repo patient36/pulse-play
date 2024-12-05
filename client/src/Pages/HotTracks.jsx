@@ -32,7 +32,7 @@ const HotTracks = () => {
     },
   ];
   return (
-    <div className="hero-container">
+    <div className="hero-container pl-8">
       <SideBar isOpen={false} />
       <List className="hero" data={data} title="🔥 Hot Tracks" />
     </div>
