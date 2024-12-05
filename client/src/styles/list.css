@@ -5,6 +5,8 @@
   transition: width 0.3s ease;
   overflow-y: scroll;
   scrollbar-width: none;
+  position: relative;
+  padding: 20px;
 }
 
 .list h2 {
