@@ -3,6 +3,7 @@ import "../styles/navbar.css";
 import Logo from "./Logo";
 import { GrHomeRounded } from "react-icons/gr";
 import { IoSearch } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,6 +14,8 @@ const NavBar = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="navbar">
@@ -35,10 +38,8 @@ const NavBar = () => {
         </div>
       ) : (
         <div className="accounts">
-          <button className="sign-up text-gray-300">Sign up</button>
-          <button className="login" onClick={toggleLogin}>
-            Log in
-          </button>
+          <button className="sign-up text-gray-300"  onClick={() => {navigate("/register")}}>Sign up</button>
+          <button className="login" onClick={() => {navigate("/login")}}>Log in</button>
         </div>
       )}
       <div className="hamburger-menu" onClick={toggleMenu}>
