@@ -10,12 +10,14 @@ import { PiMusicNote } from "react-icons/pi";
 import { MdFavorite } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { IoIosArrowDropright } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const SideBar = ({ isOpen }) => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(isOpen);
   const toggleSideBar = () => {
     setIsSideBarOpen(!isSideBarOpen);
   };
+  const navigate = useNavigate();
   return (
     <div className={`side-bar ${isSideBarOpen ? "" : "closed"}`}>
       {isSideBarOpen ? (
@@ -42,7 +44,7 @@ const SideBar = ({ isOpen }) => {
           <section>
             <h2>Discover</h2>
             <ul>
-              <li>
+              <li onClick={() => navigate("/hot-tracks")}>
                 <BsFire className="icon" />
                 Hot Tracks
               </li>

@@ -25,7 +25,7 @@ const NavBar = () => {
       </div>
       <div className="search">
         <div className="home">
-          <GrHomeRounded className="home-icon" />
+          <GrHomeRounded className="home-icon" onClick={() => {navigate("/")}} />
         </div>
         <div className="search-bar">
           <input type="text" placeholder="Search" />
