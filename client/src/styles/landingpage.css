@@ -131,6 +131,7 @@
 .hero .track-card .image-container {
     width: 150px;
     height: 200px;
+    background-color: rgba(96, 96, 96, 0.2);
     border-radius: 5px;
     overflow: hidden;
 }
