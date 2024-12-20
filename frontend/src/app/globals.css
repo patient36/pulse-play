@@ -5,7 +5,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
-  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 @layer base {
@@ -81,10 +82,9 @@ body {
 
 .sidebar {
   border-right: 1px solid rgba(128, 128, 128, 0.3);
-  height: 90vh;
+  height: 100vh;
   overflow-y: scroll;
   overflow-x: auto;
-  scrollbar-width: none;
   background: rgba(218, 218, 241, 0.1);
   backdrop-filter: blur(3px);
 }
@@ -115,4 +115,15 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/* Remove scrollbar */
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+
+::-webkit-scrollbar{
+  width: 0;
 }
