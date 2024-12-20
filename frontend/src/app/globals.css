@@ -76,10 +76,6 @@ body {
   }
 }
 
-.navbar {
-  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
-}
-
 .sidebar {
   border-right: 1px solid rgba(128, 128, 128, 0.3);
   height: 100vh;
@@ -93,7 +89,7 @@ body {
   font-size: 20px;
   cursor: pointer;
   color: ghostwhite;
-  transition: all .15s ease;
+  transition: all 0.15s ease;
 }
 
 .icon:active {
@@ -123,7 +119,10 @@ body {
   scrollbar-width: none;
 }
 
+.border-b-1 {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0;
 }
