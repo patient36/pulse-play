@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Header from './Components/Header'
-import SideBar from './Components/Sidebar'
+import Header from '../Components/Header'
+import SideBar from '../Components/Sidebar'
 
 import './globals.css'
 
