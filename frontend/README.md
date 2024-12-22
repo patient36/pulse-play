@@ -20,4 +20,4 @@ To get started with PulsePlay repository, follow these simple steps:
 
 ## **Credits**
 
-PulsePlay was ideated and crafted with dedication by [Leroy Patient](https://github.com/patient36).
+PulsePlay was ideated and crafted  by [Leroy Patient](https://github.com/patient36).
