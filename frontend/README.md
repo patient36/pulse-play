@@ -10,7 +10,7 @@ PulsePlay is a sleek music streaming platform dedicated to delivering seamless a
 
 ## **Installation**
 
-To get started with PulsePlay repository, follow these simple steps:
+To get started with PulsePlay frontend repository, follow these simple steps:
 
 1. Clone the repository: `git clone https://github.com/patient36/pulse-play.git`
 2. Navigate to the project directory: `cd pulse-play/frontend`
