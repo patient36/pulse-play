@@ -76,7 +76,7 @@ To set up the project locally, follow these steps:
    npm install
    ```
 
-3. Create a `.env` file and add your environment variables:
+3. Create a `.env` file and add your environment variables as follows:
 
    ```env
    PORT=5000
