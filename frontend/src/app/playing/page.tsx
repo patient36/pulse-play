@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { FaPause, FaPlay } from "react-icons/fa6";
-import { TbRewindForward10, TbRewindBackward10 } from "react-icons/tb";
 import { GiNextButton, GiPreviousButton } from "react-icons/gi";
 
 type Lyric = {
@@ -45,8 +44,8 @@ const mockTrackData: TrackData = {
     title: "Taste",
     artist: "Tyga",
     thumbnail_src: "/images/9.jpg",
-    audio_src: "/audios/1.mp3",
-    duration: 244, // seconds
+    audio_src: "http://localhost:5000/api/get/audio/6779ea78d9ac9f88dc676ae9",
+    duration: 1000, // seconds
     featurings: ["OffSet", "DA", "AXL"],
     lyrics: mockLyrics
 };
@@ -70,21 +69,6 @@ const MusicPlayer: React.FC = () => {
         }
     };
 
-    const rewind = () => {
-        if (audioRef.current) {
-            audioRef.current.currentTime = Math.max(0, audioRef.current.currentTime - 10);
-        }
-    };
-
-    const forward = () => {
-        if (audioRef.current) {
-            audioRef.current.currentTime = Math.min(
-                mockTrackData.duration,
-                audioRef.current.currentTime + 10
-            );
-        }
-    };
-
     const toggleLyricsVisibility = () => {
         setLyricsVisible(!lyricsVisible);
     };
@@ -98,8 +82,14 @@ const MusicPlayer: React.FC = () => {
         return minutes * 60 + seconds;
     };
 
-    const formattedTime = (time: number) =>
-        new Date(time * 1000).toISOString().substr(14, 5);
+    const formattedTime = (time: number) => {
+        const hours = Math.floor(time / 3600);
+        const minutes = Math.floor((time % 3600) / 60);
+        const seconds = Math.floor(time % 60);
+    
+        return `${hours > 0 ? String(hours).padStart(2, '0') + ':' : ''}${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    };
+    
 
     useEffect(() => {
         const audio = audioRef.current;
@@ -238,10 +228,6 @@ const MusicPlayer: React.FC = () => {
                             className="text-2xl mx-2 transition-all cursor-pointer active:scale-105"
                             onClick={() => console.log("Play previous track")}
                         />
-                        <TbRewindBackward10
-                            className="text-2xl mx-5 transition-all cursor-pointer active:scale-105"
-                            onClick={rewind}
-                        />
                         {isPlaying ? (
                             <FaPause
                                 className="rounded-full bg-green-700 bg-opacity-90 h-12 w-12 p-3 text-xl mx-5 transition-all cursor-pointer active:scale-105"
@@ -253,10 +239,6 @@ const MusicPlayer: React.FC = () => {
                                 onClick={togglePlay}
                             />
                         )}
-                        <TbRewindForward10
-                            className="text-2xl mx-5 transition-all cursor-pointer active:scale-105"
-                            onClick={forward}
-                        />
                         <GiNextButton
                             className="text-2xl mx-2 transition-all cursor-pointer active:scale-105"
                             onClick={() => console.log("Play next track")}
